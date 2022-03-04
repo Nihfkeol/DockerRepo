@@ -15,7 +15,6 @@ RUN chmod -R 777 /usr/local/bin/start.sh \
     && yum-config-manager --enable mysql57-community \
     && yum -y install mysql-community-server \
     && yum clean all
-#暴露端口
-EXPOSE 3306
+
 #运行初始化脚本
 CMD ["/usr/local/bin/start.sh"]

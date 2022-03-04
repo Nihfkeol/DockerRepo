@@ -30,7 +30,7 @@ INIT_MYSQL(){
    mysqladmin -uroot -p$dbPassword password $MYSQL_ROOT_PASSWORD
    #设置远程登录
    echo -e "\033[1;32m 设置远程登录 \033[0m"
-   mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root';flush privileges;";
+   mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';flush privileges;";
    echo -e "\033[1;32m emote connection is set \033[0m"
    yum clear all
    rm -rf /usr/local/download
